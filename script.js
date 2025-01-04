@@ -127,3 +127,12 @@ function decimal(value){
     }
 
 }
+function adjustForScreen() {
+    const width = window.innerWidth;
+    const fontSize = width < 480 ? '14px' : '32px';
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => (btn.style.fontSize = fontSize));
+}
+
+window.addEventListener('resize', adjustForScreen);
+window.addEventListener('load', adjustForScreen);
